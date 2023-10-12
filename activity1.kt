@@ -14,17 +14,19 @@ class Customer(cusId:String, bp1:Int, tax:Float, price:Float, name:String) : Pro
 	var customer_id : String = ""
 	var quantity_bought_from_product : Int = 0
 
+	var total : Float = 0.00f
+
 	init{
 		customer_id = cusId
 		quantity_bought_from_product = bp1
 	}
 
 	fun calculateBill(){
-
+		total = (unit_price + (unit_price * tax_rate)) * quantity_bought_from_product
 	}
 
 	fun displayData(){
-
+		println("Final Bill Amount is : $total")
 	}
 }
 
@@ -47,8 +49,19 @@ open class ImportedProduct(tax:Float){
 } 
 
 fun main(){
+
 	print("Enter Customer ID : ")
 	var cID : String = readLine().toString()
+	print("Enter Product Name : ")
+	var pName : String = readLine().toString()
+	print("Enter $pName unit price : ")
+	var price = readLine()?.toFloat() ?: 0.0f
+	print("Enter Quantity bought : ")
+	var qt = readLine()?.toInt() ?: 0
+	print("Enter Tax rate : ")
+	var tax = readLine()?.toFloat() ?: 0.0f
 
-	
+	var cus = Customer(cID, qt, tax, price, pName)
+	cus.calculateBill()
+	cus.displayData()
 }
