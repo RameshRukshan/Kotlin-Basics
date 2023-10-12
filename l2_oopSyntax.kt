@@ -1,9 +1,13 @@
 class Pen{					//create class
 
-	private var color : String = "White"	//set private attribute color inside the class
+	private var color : String = ""	//set private attribute color inside the class
  				
 	public fun display(){			//method inside the class | default access lable is public
 		println("This is a Pen")
+	}
+
+	public fun setColor(){
+		color = "Red"
 	}
 
 	public fun displayColor(){		//method to display the color
