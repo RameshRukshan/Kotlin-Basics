@@ -1,31 +1,24 @@
-class Car {
-	var make: String = ""
-	var model: String = ""
-	var year: Int = 0
-
-	inner class Engine {
-		var horsepower: Int = 0
-		var cylinders: Int = 0
-
-		fun getEngineInfo(): String {
-			return "$horsepower horsepower, $cylinders cylinders, in a $make $model"
+class Computer{
+	class Motherboard{ 		//nested class
+		fun show(){
+			println("working")
 		}
-	}
-
-	fun getInfo(): String {
-		return "$make $model, year $year"
 	}
 }
 
-fun main() {
-	val myCar = Car()
-	myCar.make = "Toyota"
-	myCar.model = "Camry"
-	myCar.year = 2020
+class House{
+	inner class Room{		//inner keyword is add in inner class
+		fun show(){
+			println("Room is empty")
+		}
+	}
+}
 
-	val engine = myCar.Engine()
-	engine.horsepower = 250
-	engine.cylinders = 6
+fun main(){
+	var a = Computer.Motherboard()
+	a.show()		//to run above method boath class shuld be mention
 
-	println(engine.getEngineInfo())
+	var home = House()		//to run inner class method boath class shuld call seperately
+	var myRoom = home.Room()
+	myRoom.show()
 }
