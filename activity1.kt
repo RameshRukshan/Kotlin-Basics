@@ -25,8 +25,18 @@ class Customer(cusId:String, bp1:Int, tax:Float, price:Float, name:String) : Pro
 		total = (unit_price + (unit_price * tax_rate)) * quantity_bought_from_product
 	}
 
-	fun displayData(){
+	fun showBill(){
+		println("\n\n--------------------------------------------")
+		println("|                  B I L L                 |")
+		println("--------------------------------------------")
+		println("Customer ID : $customer_id")
+		println("Product Name : $product_name")
+		println("Unit Price for $product_name : $unit_price")
+		println("Quantity bougt from $product_name : $quantity_bought_from_product")
+		println("Tax rate for $product_name : $tax_rate")
+		println("\n--------------------------------------------")
 		println("Final Bill Amount is : $total")
+		println("--------------------------------------------\n\n")
 	}
 }
 
@@ -63,5 +73,5 @@ fun main(){
 
 	var cus = Customer(cID, qt, tax, price, pName)
 	cus.calculateBill()
-	cus.displayData()
+	cus.showBill()
 }
