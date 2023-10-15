@@ -7,7 +7,7 @@ fun main(){
 	}else if(numTwo > numOne){
 		println("$numTwo > $numOne")
 	}else{
-		println("Invalid Input...")
+		println("Invalid Input")
 	}
 
 	var number : Int = 50
@@ -19,7 +19,7 @@ fun main(){
 		40->print("O is 40")
 		50->print("O is 50")
 		60->print("O is 60")
-		else->print("Default..")
+		else->print("Default")
 	}
 		
 }
